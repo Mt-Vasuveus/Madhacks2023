@@ -9,7 +9,8 @@ public class App {
     }
 
     public static void main(String[] args) {
-        
+        HttpRequest request = HttpRequest.newBuilder().uri(new URI("https://users.roblox.com/docs/index.html")).GET().build();
+        HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
         System.out.println(new App().getGreeting());
     }
 }
